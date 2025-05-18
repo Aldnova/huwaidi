@@ -3,30 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Muhammad Rasyid Rafif Huwaidi - EEPIS student specializing in Unity, Blender, C#, and Flutter">
+    <meta name="author" content="Muhammad Rasyid Rafif Huwaidi">
     <title>Rafif Huwaidi Portfolio</title>
+    
+    <!-- External CSS and Font Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- CSS Variables and Custom Styles -->
     <style>
+        /**
+         * Main Color Palette
+         * --primary-dark: #0f172a (Background)
+         * --primary-text: #e2e8f0 (Default text)
+         * --accent-blue: #2563eb (Profile border)
+         * --accent-red: #ef4444 (Links)
+         * --hover-red: #f87171 (Links hover)
+         */
+        
+        :root {
+            --primary-dark: #0f172a;
+            --primary-text: #e2e8f0;
+            --accent-blue: #2563eb;
+            --accent-red: #ef4444;
+            --hover-red: #f87171;
+        }
+        
+        /* Base Styles */
         body {
-            background-color: #0f172a;
-            color: #e2e8f0;
+            background-color: var(--primary-dark);
+            color: var(--primary-text);
             font-family: 'Inter', sans-serif;
             text-align: center;
         }
+        
+        /* Profile Image Styles */
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            border: 4px solid var(--accent-blue);
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Project Image Styles */
+        .project-image {
+            height: 240px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        /* Link Styles */
+        .project-link,
+        .social-link {
+            color: var(--accent-red);
+            transition: color 0.3s ease;
+        }
+        
+        .project-link:hover,
+        .social-link:hover {
+            color: var(--hover-red);
+        }
+        
+        /* iFrame Style */
+        iframe {
+            background-color: #fff;
+        }
+        
+        /* Slider Component Styles */
         .slider-container {
             overflow: hidden;
             position: relative;
             max-width: 600px;
             margin: 0 auto;
         }
+        
         .slider {
             display: flex;
             transition: transform 0.5s ease;
         }
+        
         .slide {
             min-width: 100%;
             transition: 0.5s;
         }
+        
+        /* Slider Navigation Arrows */
         .arrow {
             position: absolute;
             top: 50%;
@@ -42,49 +112,30 @@
             cursor: pointer;
             z-index: 10;
         }
+        
         .arrow-left {
             left: 10px;
         }
+        
         .arrow-right {
             right: 10px;
-        }
-        .profile-image {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto;
-            border: 4px solid #2563eb;
-        }
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .project-image {
-            height: 240px;
-            width: 100%;
-            object-fit: cover;
-        }
-        iframe {
-            background-color: #fff;
         }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
-    <!-- Header -->
+    <!-- Header Section -->
     <header class="bg-blue-800 text-white p-8 text-center">
         <h1 class="text-4xl font-bold">Salvete, care advenae</h1>
     </header>
 
     <!-- About Section -->
-    <section class="py-16 px-4 bg-gray-900">
+    <section id="about" class="py-16 px-4 bg-gray-900">
         <div class="max-w-2xl mx-auto text-center">
             <div class="flex flex-col items-center">
                 <div class="profile-image mb-6">
-                    <img src="cv/Gwejh.jpeg" alt="Profile" />
+                    <img src="cv/Gwejh.jpeg" alt="Profile Photo of Rafif Huwaidi" />
                 </div>
-                <h3 class="text-2xl font-bold mb-4">Muhammad Rasyid Rafif Huwaidi</h3>
+                <h2 class="text-2xl font-bold mb-4">Muhammad Rasyid Rafif Huwaidi</h2>
                 <p class="text-gray-300 mb-6">
                     Currently an active student of Electronic Engineering Polytechnic Institute of Surabaya (EEPIS) 
                     with a passion for Unity, Blender, C#, and Flutter.
@@ -98,34 +149,35 @@
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl font-bold text-white mb-8">Products & Projects</h2>
             
+            <!-- Project Slider Component -->
             <div class="slider-container">
                 <div class="slider">
-                    <!-- Project 1 -->
+                    <!-- Project Card 1 -->
                     <div class="slide px-4">
                         <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg mx-auto max-w-sm">
                             <div class="h-48 overflow-hidden">
-                                <img src="cv/g1.png" alt="Rocketarium" class="project-image" />
+                                <img src="cv/g1.png" alt="Screenshot of Rocketarium game" class="project-image" />
                             </div>
                             <div class="p-6 text-center">
                                 <h3 class="text-xl font-bold text-white mb-2">Rocketarium</h3>
                                 <p class="text-gray-400 mb-4">Participating as a member of the team in GameJamPlus 2023 Indonesia. Working as programmer for obstacle and movement logic</p>
-                                <a href="https://irawanawan.itch.io/rocketarium" class="text-blue-400 hover:text-blue-300 font-medium">
+                                <a href="https://irawanawan.itch.io/rocketarium" class="project-link font-medium" aria-label="View Rocketarium project">
                                     <i class="fas fa-gamepad mr-1"></i> Click here to view
                                 </a>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Project 2 -->
+                    <!-- Project Card 2 -->
                     <div class="slide px-4">
                         <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg mx-auto max-w-sm">
                             <div class="h-48 overflow-hidden">
-                                <img src="cv/g2.png" alt="Run! From Campus" class="project-image" />
+                                <img src="cv/g2.png" alt="Screenshot of Run! From Campus game" class="project-image" />
                             </div>
-                            <div class="p-6">
+                            <div class="p-6 text-center">
                                 <h3 class="text-xl font-bold text-white mb-2">Run! From Campus</h3>
                                 <p class="text-gray-400 mb-4">Participating as a member of the team in Gimjam 2025 by Ganesha Interactive Media ITB. Working as UI designer for the Main Menu and Settings</p>
-                                <a href="https://akhmad-tegar.itch.io/run-from-campus" class="text-blue-400 hover:text-blue-300 font-medium">
+                                <a href="https://akhmad-tegar.itch.io/run-from-campus" class="project-link font-medium" aria-label="View Run! From Campus project">
                                     <i class="fas fa-gamepad mr-1"></i> Click here to view
                                 </a>
                             </div>
@@ -133,77 +185,124 @@
                     </div>
                 </div>
                 
-                <div class="arrow arrow-left"><i class="fas fa-chevron-left"></i></div>
-                <div class="arrow arrow-right"><i class="fas fa-chevron-right"></i></div>
+                <!-- Slider Navigation Arrows -->
+                <button class="arrow arrow-left" aria-label="Previous project"><i class="fas fa-chevron-left"></i></button>
+                <button class="arrow arrow-right" aria-label="Next project"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
 
-    <!-- Links Section -->
+    <!-- Social Links Section -->
     <section id="links" class="py-16 px-4 bg-gray-900">
         <div class="max-w-md mx-auto text-center">
-            <h2 class="text-3xl font-bold text-white mb-8">Links</h2>
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="https://github.com/Aldnova?tab=repositories" class="text-gray-300 hover:text-blue-400 transition text-2xl">
-                    <i class="fab fa-github"></i>
-                    <p class="text-sm mt-1">GitHub</p>
+            <h2 class="text-3xl font-bold text-red-500 mb-8">Links</h2>
+            <div class="flex justify-center items-center space-x-48 mb-8">
+                <a href="https://github.com/Aldnova?tab=repositories" 
+                   class="social-link transition flex flex-col items-center"
+                   aria-label="GitHub Profile">
+                    <i class="fab fa-github text-5xl mb-3"></i>
+                    <span class="text-sm">GitHub</span>
                 </a>
-                <a href="https://www.linkedin.com/in/rafif-huwaidi-muhammad-rasyid-749743322" class="text-gray-300 hover:text-blue-400 transition text-2xl">
-                    <i class="fab fa-linkedin"></i>
-                    <p class="text-sm mt-1">LinkedIn</p>
+                <a href="https://www.linkedin.com/in/rafif-huwaidi-muhammad-rasyid-749743322" 
+                   class="social-link transition flex flex-col items-center"
+                   aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin text-5xl mb-3"></i>
+                    <span class="text-sm">LinkedIn</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer class="py-6 px-4 bg-gray-950 text-center">
         <div class="max-w-md mx-auto">
             <p class="text-gray-500">&copy; 2025 Muhammad Rasyid Rafif Huwaidi</p>
         </div>
     </footer>
 
+    <!-- JavaScript for Project Slider -->
     <script>
+        /**
+         * Portfolio Slider Functionality
+         * 
+         * This script handles the project slider navigation including:
+         * - Arrow button controls
+         * - Keyboard arrow navigation
+         * - Proper slider bounds checking
+         */
         document.addEventListener('DOMContentLoaded', function() {
-            initSliders();
+            initProjectSliders();
         });
 
-        function initSliders() {
-            // Get all slider containers
+        /**
+         * Initialize all project sliders on the page
+         */
+        function initProjectSliders() {
+            // Find all slider containers in the document
             const sliderContainers = document.querySelectorAll('.slider-container');
             
+            // Initialize each slider found
             sliderContainers.forEach(container => {
-                const slider = container.querySelector('.slider');
-                const slides = container.querySelectorAll('.slide');
-                const leftArrow = container.querySelector('.arrow-left');
-                const rightArrow = container.querySelector('.arrow-right');
-                let currentIndex = 0;
-                
-                function updateSlider() {
-                    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-                }
-                
-                leftArrow.addEventListener('click', function() {
-                    currentIndex = Math.max(currentIndex - 1, 0);
-                    updateSlider();
-                });
-                
-                rightArrow.addEventListener('click', function() {
-                    currentIndex = Math.min(currentIndex + 1, slides.length - 1);
-                    updateSlider();
-                });
-                
-                // Set initial state
-                updateSlider();
+                initSingleSlider(container);
             });
 
-            // Keyboard navigation for all sliders
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'ArrowLeft') {
+            // Add keyboard navigation for accessibility
+            setupKeyboardNavigation();
+        }
+        
+        /**
+         * Initialize a single slider with navigation controls
+         * @param {HTMLElement} container - The slider container element
+         */
+        function initSingleSlider(container) {
+            const slider = container.querySelector('.slider');
+            const slides = container.querySelectorAll('.slide');
+            const leftArrow = container.querySelector('.arrow-left');
+            const rightArrow = container.querySelector('.arrow-right');
+            let currentIndex = 0;
+            
+            // Skip initialization if missing required elements
+            if (!slider || !slides.length || !leftArrow || !rightArrow) {
+                console.error('Slider missing required elements');
+                return;
+            }
+            
+            /**
+             * Update slider position based on current index
+             */
+            function updateSliderPosition() {
+                slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+            
+            // Left arrow click handler - move to previous slide
+            leftArrow.addEventListener('click', function() {
+                currentIndex = Math.max(currentIndex - 1, 0);
+                updateSliderPosition();
+            });
+            
+            // Right arrow click handler - move to next slide
+            rightArrow.addEventListener('click', function() {
+                currentIndex = Math.min(currentIndex + 1, slides.length - 1);
+                updateSliderPosition();
+            });
+            
+            // Set initial slider position
+            updateSliderPosition();
+        }
+        
+        /**
+         * Setup keyboard arrow navigation for all sliders
+         */
+        function setupKeyboardNavigation() {
+            document.addEventListener('keydown', function(event) {
+                // Left arrow key press
+                if (event.key === 'ArrowLeft') {
                     document.querySelectorAll('.arrow-left').forEach(arrow => {
                         arrow.click();
                     });
-                } else if (e.key === 'ArrowRight') {
+                } 
+                // Right arrow key press
+                else if (event.key === 'ArrowRight') {
                     document.querySelectorAll('.arrow-right').forEach(arrow => {
                         arrow.click();
                     });
